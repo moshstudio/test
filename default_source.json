@@ -1,0 +1,11 @@
+{
+  name: '默认源',
+  version: 1,
+  urls: [
+    {
+      name: '美之图',
+      type: 'photo',
+      url: '',
+    },
+  ],
+}
