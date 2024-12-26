@@ -1,5 +1,6 @@
 
 class MMZZTT extends PhotoExtension {
+  id = "dhs78ds89sa"
   name = '美之图';
   version = '0.0.1';
   baseUrl = 'https://kkmzt.com/';
