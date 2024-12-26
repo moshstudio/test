@@ -1,5 +1,6 @@
 
 class HotGirl extends PhotoExtension {
+  id = "y78dsayd";
   name = "HotGirl";
   version = "0.0.1";
   baseUrl = "https://www.hotgirl2024.com/";
