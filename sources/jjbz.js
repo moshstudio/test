@@ -1,4 +1,5 @@
 class JiJianBiZhi extends PhotoExtension {
+  id = "dk-0sau8"
   name = "极简壁纸";
   version = "0.0.1";
   baseUrl = "https://bz.zzzmh.cn/index";
