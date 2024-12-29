@@ -32,7 +32,7 @@ class MMZZTT extends PhotoExtension {
         listArr.push({
           id: this.nanoid(),
           title,
-          cover: cover || '',
+          cover: this.toProxyUrl(cover) || '',
           datetime,
           url: item.querySelector('a').href,
         });
@@ -73,7 +73,7 @@ class MMZZTT extends PhotoExtension {
           listArr.push({
             id: this.nanoid(),
             title,
-            cover: cover || '',
+            cover: this.toProxyUrl(cover) || '',
             datetime,
             url: item.querySelector('a').href,
           });
@@ -123,7 +123,7 @@ class MMZZTT extends PhotoExtension {
 
       return {
         item,
-        photos: data.map((link) => this.urlJoin(imgPrefix, link)),
+        photos: data.map((link) => this.toProxyUrl(this.urlJoin(imgPrefix, link))),
         page: pageNo || 1,
         total: pageNo || 1,
       };
