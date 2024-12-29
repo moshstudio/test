@@ -17,6 +17,11 @@
       "name": "极简壁纸",
       "type": "photo",
       "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/jjbz.js"
+    },
+    {
+      "name": "咪咕音乐",
+      "type": "song",
+      "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/migu.js"
     }
   ]
 }
