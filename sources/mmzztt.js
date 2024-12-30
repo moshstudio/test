@@ -41,7 +41,7 @@ class MMZZTT extends PhotoExtension {
       return {
         list: listArr,
         page: pageNo,
-        total: this.maxPageNoFromElements(pageItems),
+        totalPage: this.maxPageNoFromElements(pageItems),
       };
     } catch (error) {
       console.log(error);
@@ -83,7 +83,7 @@ class MMZZTT extends PhotoExtension {
       return {
         list: listArr,
         page: pageNo,
-        total: this.maxPageNoFromElements(pageItems),
+        totalPage: this.maxPageNoFromElements(pageItems),
       };
     } catch (error) {
       console.log(error);
@@ -125,7 +125,7 @@ class MMZZTT extends PhotoExtension {
         item,
         photos: data.map((link) => this.toProxyUrl(this.urlJoin(imgPrefix, link))),
         page: pageNo || 1,
-        total: pageNo || 1,
+        totalPage: pageNo || 1,
       };
     } catch (error) {
       console.log(error);
