@@ -122,14 +122,14 @@ class HotGirl extends PhotoExtension {
         ".pagination__item--active"
       );
       const page = Number(pageElement?.textContent?.trim()) || pageNo || 1;
-      const total = this.maxPageNoFromElements(
+      const totalPage = this.maxPageNoFromElements(
         iframeDocument?.querySelectorAll(".pagination__total")
       );
       return {
         item,
         photos: imgItems,
         page,
-        total,
+        totalPage,
       };
     } catch (error) {
       console.log(error);
