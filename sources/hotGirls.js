@@ -43,7 +43,7 @@ class HotGirl extends PhotoExtension {
       return {
         list: listArr,
         page: pageNo,
-        total: this.maxPageNoFromElements(pageItems),
+        totalPage: this.maxPageNoFromElements(pageItems),
       };
     } catch (error) {
       console.log(error);
@@ -89,7 +89,7 @@ class HotGirl extends PhotoExtension {
       return {
         list: listArr,
         page: pageNo,
-        total: this.maxPageNoFromElements(pageItems),
+        totalPage: this.maxPageNoFromElements(pageItems),
       };
     } catch (error) {
       console.log(error);
