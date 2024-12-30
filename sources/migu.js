@@ -36,7 +36,7 @@ class MiGuSongExtension extends SongExtension {
       list,
       page: pageNo,
       pageSize: data.retMsg.playlist.length,
-      total: Math.floor(
+      totalPage: Math.floor(
         Number(data.retMsg.countSize) / data.retMsg.playlist.length
       ),
     };
@@ -76,7 +76,7 @@ class MiGuSongExtension extends SongExtension {
       list,
       page: pageNo,
       pageSize: data.result.pageSize,
-      total:
+      totalPage:
         Math.floor(Number(data.result.totalCount) / data.result.pageSize) + 1,
     };
   }
@@ -101,7 +101,7 @@ class MiGuSongExtension extends SongExtension {
       list,
       page: pageNo,
       pageSize: this.pageSize,
-      total: response.pgt,
+      totalPage: response.pgt,
     };
   }
   async searchSongs(keyword, pageNo) {
@@ -130,7 +130,7 @@ class MiGuSongExtension extends SongExtension {
       list: songs,
       page: pageNo,
       pageSize: this.pageSize,
-      total: response.pgt,
+      totalPage: response.pgt,
     };
   }
 
@@ -203,7 +203,7 @@ class MiGuSongExtension extends SongExtension {
       list: songs,
       page: pageNo,
       pageSize: 20,
-      total: Number(item.songCount),
+      totalPage: Number(item.songCount),
     };
 
     return item;
