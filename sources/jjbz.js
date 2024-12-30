@@ -59,7 +59,7 @@ class JiJianBiZhi extends PhotoExtension {
       return {
         list,
         page: data.data.currPage,
-        total: data.data.totalPage,
+        totalPage: data.data.totalPage,
       };
     } catch (error) {
       console.log(error);
