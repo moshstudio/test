@@ -2,9 +2,7 @@ class MiGuSongExtension extends SongExtension {
   id = "dhs78adgh";
   name = "咪咕音乐";
   version = "0.0.1";
-  baseUrl = "https://bz.zzzmh.cn/index";
-  pageUrl = "https://api.zzzmh.cn/v2/bz/v3/getData";
-  searchUrl = "https://api.zzzmh.cn/v2/bz/v3/searchData";
+  baseUrl = "https://music.migu.cn/";
   pageSize = 10;
   async getRecommendPlaylists(pageNo) {
     pageNo ||= 1;
@@ -249,7 +247,7 @@ class MiGuSongExtension extends SongExtension {
       if (response.data?.url) {
         return {
           "128k": response.data.url,
-          strict: true,
+          headers: {referer: this.baseUrl},
         };
       }
     }
