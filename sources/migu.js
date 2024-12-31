@@ -245,10 +245,7 @@ class MiGuSongExtension extends SongExtension {
         return null;
       }
       if (response.data?.url) {
-        return {
-          "128k": response.data.url,
-          headers: {referer: this.baseUrl},
-        };
+        return response.data.url;
       }
     }
     return null;
