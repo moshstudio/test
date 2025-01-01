@@ -74,14 +74,12 @@ class ZZ123 extends SongExtension {
     const url = `https://zz123.com/search/?key=${keyword}&page=${pageNo}`;
     const response = await this.fetch(url);
     const text = await response.text();
-    console.log(text);
 
     const regex = /var pageSongArr=\[(.*?)\];/;
     const match = text.match(regex);
     if (match && match[1]) {
       // 将匹配到的字符串转换为数组
       const songArray = JSON.parse(`[${match[1]}]`);
-      console.log(songArray);
 
       const list = songArray.map((song) => {
         return {
