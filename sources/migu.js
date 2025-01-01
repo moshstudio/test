@@ -162,7 +162,6 @@ class MiGuSongExtension extends SongExtension {
     const listUrl = `https://music.migu.cn/v3/music/playlist/${item.id}?page=${pageNo}`;
 
     const listRes = await this.getData(listUrl);
-    console.log(listRes);
 
     const html = new DOMParser().parseFromString(listRes, "text/html");
     html.querySelectorAll(".row").forEach((ele) => {
