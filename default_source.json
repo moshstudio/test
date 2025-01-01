@@ -19,6 +19,11 @@
       "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/jjbz.js"
     },
     {
+      "name": "ZZ123",
+      "type": "song",
+      "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/zz123.js"
+    },
+    {
       "name": "咪咕音乐",
       "type": "song",
       "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/migu.js"
