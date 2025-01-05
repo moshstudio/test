@@ -2,7 +2,7 @@ class BiQu extends BookExtension {
   id = "h887SDHS";
   name = "笔趣";
   version = "0.0.1";
-  baseUrl = "https://m.22biqu.com/";
+  baseUrl = "https://m.22biqu.net/";
   async getRecommendBooks(pageNo, type) {
     let items = [
       {
@@ -73,7 +73,7 @@ class BiQu extends BookExtension {
     );
     await Promise.all(
       Array.from(pageElements.entries()).map(async ([index, element]) => {
-        let url = element.getAttribute("value");
+        let url = this.urlJoin(this.baseUrl, element.getAttribute("value"));
         if (!url) return;
         let elementBody;
         if (index == 0) {
