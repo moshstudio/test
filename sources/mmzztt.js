@@ -106,12 +106,12 @@ class MMZZTT extends PhotoExtension {
       const imgPrefix = imgSrc?.split('/').slice(0, -1).join('/');
 
       const pid = item.url?.split('/').pop();
-      const url = `https://com.okmzt.net/app/post/p?id=${pid}`;
+      const url = `https://kkmzt.com/app/post/p?id=${pid}`;
 
       const response = await this.fetch(url, {
         headers: {
           'Upgrade-Insecure-Requests': '1',
-          Referer: 'https://com.okmzt.net/',
+          Referer: 'https://kkmzt.com/',
         },
       });
 
