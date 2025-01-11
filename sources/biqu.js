@@ -13,6 +13,14 @@ class BiQu extends BookExtension {
         name: "月排行榜",
         url: this.urlJoin(this.baseUrl, "rank/monthvisit/"),
       },
+      {
+        name: "周排行榜",
+        url: this.urlJoin(this.baseUrl, "rank/weekvisit/"),
+      },
+      {
+        name: "收藏榜",
+        url: this.urlJoin(this.baseUrl, "rank/goodnum/"),
+      },
     ];
     if (!type) {
       return items.map((item) => ({
