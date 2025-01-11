@@ -149,6 +149,9 @@ class ZZ123 extends SongExtension {
       headers: {},
     };
   }
+  async getLyric(item) {
+    return null;
+  }
 }
 
 return ZZ123;
