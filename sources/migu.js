@@ -249,8 +249,7 @@ class MiGuSongExtension extends SongExtension {
       if (response.data?.url) {
         return {
           '128k': response.data.url,
-          headers: {},
-          lyric: await this.getLyric(item),
+          lyric: item.lyric || await this.getLyric(item),
         };
       }
     }
