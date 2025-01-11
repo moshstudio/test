@@ -32,6 +32,11 @@
       "name": "笔趣",
       "type": "book",
       "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/biqu.js"
+    },
+    {
+      "name": "81中文",
+      "type": "book",
+      "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/bayizww.js"
     }
   ]
 }
