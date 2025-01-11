@@ -247,10 +247,25 @@ class MiGuSongExtension extends SongExtension {
         return null;
       }
       if (response.data?.url) {
-        return response.data.url;
+        return {
+          '128k': response.data.url,
+          headers: {},
+          lyric: await this.getLyric(item),
+        };
       }
     }
     return null;
+  }
+  async getLyric(item) {
+    const cid = item.cid;
+    if (!cid) {
+      return null;
+    }
+    const url =
+      `http://music.migu.cn/v3/api/music/audioPlayer/getLyric` +
+      `?copyrightId=${cid}`;
+    const response = await this.getData(url);
+    return response.lyric;
   }
 }
 
