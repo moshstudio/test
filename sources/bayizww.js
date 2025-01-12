@@ -67,13 +67,9 @@ class BaYiZW extends BookExtension {
     const url = this.urlJoin(item.url, String(pageNo));
 
     const response = await this.fetch(url);
-    const body = new DOMParser().parseFromString(
-      await response.text(),
-      "text/html"
-    );
+    const body = new DOMParser().parseFromString(await response.text(), "text/html");
 
     const elements = body.querySelectorAll("#sitebox dl");
-    console.log(elements);
 
     const list = [];
     elements.forEach((element) => {
@@ -100,8 +96,7 @@ class BaYiZW extends BookExtension {
         status = others[1]?.textContent;
       }
 
-      const intro =
-        element.querySelector(".book_des")?.textContent || undefined;
+      const intro = element.querySelector(".book_des")?.textContent || undefined;
       list.push({
         id: href || this.nanoid(),
         title: title || "",
@@ -122,17 +117,21 @@ class BaYiZW extends BookExtension {
   }
 
   async search(keyword, pageNo) {
-    const url = `http://www.x81zws.com/soso50d6e.html`;
+    const home = await this.fetch(this.baseUrl);
+    const homeText = await home.text();
+    const action = homeText.match(/action="([^"]+)"/);
+    if (!action) {
+      return null;
+    }
+
+    const url = this.urlJoin(this.baseUrl, action[1]);
     const form = new FormData();
     form.append("searchkey", keyword);
     const response = await this.fetch(url, {
       method: "POST",
       body: form,
     });
-    const body = new DOMParser().parseFromString(
-      await response.text(),
-      "text/html"
-    );
+    const body = new DOMParser().parseFromString(await response.text(), "text/html");
 
     const elements = body.querySelectorAll("#sitebox dl");
     const list = [];
@@ -160,8 +159,7 @@ class BaYiZW extends BookExtension {
         status = others[1]?.textContent;
       }
 
-      const intro =
-        element.querySelector(".book_des")?.textContent || undefined;
+      const intro = element.querySelector(".book_des")?.textContent || undefined;
 
       list.push({
         id: href || this.nanoid(),
@@ -186,10 +184,7 @@ class BaYiZW extends BookExtension {
     const url = item.id;
 
     const response = await this.fetch(url);
-    const body = new DOMParser().parseFromString(
-      await response.text(),
-      "text/html"
-    );
+    const body = new DOMParser().parseFromString(await response.text(), "text/html");
 
     const chapterElements = body.querySelectorAll("#chapterList a");
     const chapters = [];
@@ -217,10 +212,7 @@ class BaYiZW extends BookExtension {
     let nextPageUrl = chapter.url;
     while (nextPageUrl) {
       const response = await this.fetch(nextPageUrl);
-      const body = new DOMParser().parseFromString(
-        await response.text(),
-        "text/html"
-      );
+      const body = new DOMParser().parseFromString(await response.text(), "text/html");
       const elements = body.querySelectorAll("#TextContent p");
       elements.forEach((p) => {
         content += p.textContent + "\n";
