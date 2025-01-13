@@ -14,6 +14,12 @@
       "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/hotGirls.js"
     },
     {
+      "name": "每日妹子图",
+      "type": "photo",
+      "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/meizi.js"
+    },
+
+    {
       "name": "极简壁纸",
       "type": "photo",
       "url": "https://raw.githubusercontent.com/moshstudio/test/refs/heads/main/sources/jjbz.js"
