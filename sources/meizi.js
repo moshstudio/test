@@ -17,7 +17,7 @@ class MeiZiTu extends PhotoExtension {
   }
 
   async fetchImages(url, pageNo, totalPage) {
-    const response = await this.fetch(url);
+    const response = await this.fetch(url, {verify: false});
     const body = new DOMParser().parseFromString(
       await response.text(),
       "text/html"
@@ -53,7 +53,7 @@ class MeiZiTu extends PhotoExtension {
   async getPhotoDetail(item, pageNo) {
     const url = item.url;
     if (!url) return null;
-    const response = await this.fetch(url);
+    const response = await this.fetch(url, {verify: false});
     const body = new DOMParser().parseFromString(
       await response.text(),
       "text/html"
